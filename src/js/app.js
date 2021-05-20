@@ -1,21 +1,19 @@
-// var timeout = 2000;
-// function slideshow(){
-//     const slide = document.getElementById("slide");
-//     let img = ['0%','-101%','-202%','-303%','-404%'];
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {
+    myFunction()
+};
 
+// Get the navbar
+var navbar = document.getElementById("navbar");
 
-
-//     img.forEach((slides, index)=>{
-//       setTimeout(()=>{
-//             slide.style.marginLeft = slides;
-//             console.log(index)
-//         }, index * timeout);
-//         if(index <= 4){
-//             slide.style.transform = "translateX(0%)";
-//             slide.removeAttribute("margin-left");
-//         }
-        
-//     })
-
-// }
-// slideshow();
+// Get the offset position of the navbar
+var sticky = 100;
+console.log(navbar.offsetTop);
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}

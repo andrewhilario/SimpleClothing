@@ -27,8 +27,24 @@ nav{
     width: 100%;
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.192);
+    transition: all .2s ease-in;
 }
-
+.content {
+    padding: 16px;
+  }
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: white;
+    color:black;
+    transition: all .2s ease-out;
+}
+.sticky + .content {
+    padding-top: 60px;
+    transition: all .2s ease-in;
+}
 .logo{
     width: 30%;
     margin-top: 10px;
@@ -101,72 +117,86 @@ section ul li h3{
   }
 
   
-  /* @-webkit-keyframes slide{
-      0%,100% {
+  @-webkit-keyframes slide{
+0%,100% {
           margin-left:0%;
       }
       
-      12% {
+      10% {
           margin-left:0%;
       }
       
-      24% {
+      20% {
           margin-left:-101%;
       }
       
-      36% {
+      30% {
           margin-left:-101%;
       }
       
-      48% {
+      40% {
+          margin-left:-202%;
+      }
+      
+      50% {
           margin-left:-202%;
       }
       
       60% {
-          margin-left:-202%;
-      }
-      
-      72% {
           margin-left:-303%;
       }
       
-      84% {
+      70% {
           margin-left:-303%;  
       }
+      80%{
+          margin-left: -404%;
+      }
+      90%{
+        margin-left: -404%;
+      }
+
   }
   @-moz-keyframes slide{
-    0%,100% {
+0%,100% {
           margin-left:0%;
       }
       
-      12% {
+      10% {
           margin-left:0%;
       }
       
-      24% {
-          margin-left:-100%;
+      20% {
+          margin-left:-101%;
       }
       
-      36% {
-          margin-left:-100%;
+      30% {
+          margin-left:-101%;
       }
       
-      48% {
-          margin-left:-200%;
+      40% {
+          margin-left:-202%;
+      }
+      
+      50% {
+          margin-left:-202%;
       }
       
       60% {
-          margin-left:-200%;
+          margin-left:-303%;
       }
       
-      72% {
-          margin-left:-300%;
+      70% {
+          margin-left:-303%;  
       }
-      
-      84% {
-          margin-left:-300%;  
+      80%{
+          margin-left: -404%;
       }
-  } */
+      90%{
+        margin-left: -404%;
+      }
+
+  }
   @keyframes slide{
     0%,100% {
           margin-left:0%;
@@ -211,7 +241,7 @@ section ul li h3{
 /* Middle Part */
 
 .middle{
-    padding-top: 125vh;
+    padding-top: 115vh;
     width: 80%;
     display: block;
     
@@ -225,11 +255,23 @@ section ul li h3{
     margin: 20px auto;
     display: flex;
     justify-content: space-around;
-    height: 100vh;
+    height: 70vh;
 }
 .models-men{
-    height: 50%;
-    width: 25%;
-    margin: 0 10px;
-    background-color: aqua;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    width: 540px;
+    padding: 0 20px;
+}
+.models-men img {
+    max-width: 100%;
+    transition: all 0.3s;
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+}
+.models-men:hover img {
+	transform: scale(1.1);
 }
